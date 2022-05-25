@@ -1,0 +1,39 @@
+
+public class Kadane_algo 
+{
+	import java.io.*;
+	// Java program to print largest contiguous array sum
+import java.util.*;
+//ADOBE  INTERVIEW BASED QUESTION
+	 class Kadane
+	{
+		public static void main (String[] args)
+		{
+			int [] a = {-2, -3, 4, -1, -2, 1, 5, -3,10};
+			System.out.println("Maximum contiguous sum is " +
+										maxSubArraySum(a));//printing max sum of subarray
+		}
+    //FUNCTION FOR THE CONTIGUOUS ARRAY  SUM
+		public static int maxSubArraySum(int a[])
+		{
+			int size = a.length;//size as array length
+			int max_sum = Integer.MIN_VALUE;//initializing a max sum a min value 
+			int max_element = 0;//taking garbage as 0
+
+			for (int i = 0; i < size; i++)
+			{
+				max_element = max_element + a[i];
+				if (max_sum < max_element)
+				{
+					max_sum  = max_element;
+				}
+				if (max_element< 0)
+				{
+					max_element = 0;
+			    }
+			return max_sum;//returning tthe max sum
+		}
+	}
+}
+
+}
